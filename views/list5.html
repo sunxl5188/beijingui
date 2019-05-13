@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报警信息统计</title>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../res/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../res/assets/css/lineStack.css">
+    <style>
+        .info-box{width:1050px;margin:15px auto 0 auto;padding:20px 0; border-top:1px solid #dedede;}
+        .form-group{margin-right:30px; line-height:30px; font-size:16px;}
+        .serialNumber{color:#00cdcd;}
+    </style>
+</head>
+<body>
+
+<div class="container-fluid" id="app">
+    <div class="blk20"></div>
+    <div class="wrap text-right">
+        <form name="myform" id="myform" class="form-inline" autocomplete="off">
+            <div class="form-group">
+                <label>日期：</label>
+                <input type="text" name="startTime" id="startTime" class="form-control" style="width: 200px;"
+                       placeholder="-"/>
+            </div>
+            <button type="button" class="btn btn-primary" @click="search">搜索</button>
+        </form>
+    </div>
+    <div class="blk20 bdx"></div>
+    <div class="blk20"></div>
+    <div class="wrap">
+        <div class="charts1">
+            <div class="container" id="chartsContent" style="height:400px;"></div>
+        </div>
+        <div class="clearfix info-box" v-if="color !== ''">
+            <div class="form-inline">
+                <div class="form-group">设备：<span class="serialNumber">{{json.datas1[color]}}</span></div>
+                <div class="form-group">报警：<span class="serialNumber">{{json.datas2[color]}}</span></div>
+                <div class="form-group">已处理：<span class="serialNumber">{{json.datas3[color]}}</span></div>
+                <div class="form-group">处理率：<span class="serialNumber">{{(json.datas3[color]/json.datas2[color] * 100).toFixed(2)}} % </span></div>
+            </div>
+        </div>
+    </div>
+    <div class="blk20"></div>
+    <div class="wrap charts2" v-if="color!==''">
+        <div class="container" id="chartsChildren" style="height:400px;"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../res/assets/js/vue.js"></script>
+<script type="text/javascript" src="../res/assets/js/jquery-3.2.1.min.js"></script>
+<script src="../res/assets/js/layer/layer.js"></script>
+<script src="../res/assets/js/laydate/laydate.js"></script>
+<script src="../res/assets/js/echarts.js"></script>
+<script src="../res/assets/js/list5.js"></script>
+</body>
+</html>

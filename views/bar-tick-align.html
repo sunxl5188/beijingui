@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../res/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../res/assets/js/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="../res/assets/css/lineStack.css">
+</head>
+<body>
+<div class="container">
+    <div class="blk20"></div>
+    <div class="wrap">
+        <form name="myform" id="myform" class="form-inline" autocomplete="off">
+            <div class="form-group">
+                <label>计划编码：</label>
+                <select name="sbType" class="form-control">
+                    <option value="">请选择计划编码</option>
+                    <option value="1">计划编码A</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>部门：</label>
+                <select name="equipment" class="form-control">
+                    <option value="">请选择设备</option>
+                    <option value="1">部门1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>负责人：</label>
+                <input type="text" name="people" class="form-control" value=""/>
+
+            </div>
+            <div class="form-group">
+                <label>日期范围：</label>
+                <input type="text" name="startTime" id="startTime" class="form-control" style="width: 120px;" />
+                至
+                <input type="text" name="endTime" id="endTime" class="form-control" style="width: 120px;" />
+            </div>
+
+            <button type="button" class="btn btn-primary search">搜索</button>
+        </form>
+    </div>
+    <div class="blk20 bdx"></div>
+    <div class="blk20"></div>
+    <div class="row" id="containerWrap">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="wrap">
+                <div id="echartsId"></div>
+            </div>
+        </div>
+    </div>
+    <div class="blk20"></div>
+    <div class="wrap">
+        <table class="table table-hover text-center">
+            <thead>
+            <tr>
+                <td><b>序号</b></td>
+                <td><b>项目名称</b></td>
+                <td><b>实际巡检次数</b></td>
+                <td><b>计划巡检次数</b></td>
+                <td><b>计划完成次数</b></td>
+                <td><b>漏检次数</b></td>
+                <td><b>漏检率</b></td>
+                <td><b>不合格数</b></td>
+                <td><b>不合格率</b></td>
+                <td><b>评分</b></td>
+            </tr>
+            </thead>
+            <tbody id="dataList"></tbody>
+        </table>
+    </div>
+
+</div>
+<script type="text/javascript">
+  var ajaxUrl = './data.php?action=3'
+</script>
+<script type="text/javascript" src="../res/assets/js/jquery-3.2.1.min.js"></script>
+<script src="../res/assets/js/bootstrap.js"></script>
+<script src="../res/assets/js/laydate/laydate.js"></script>
+<script src="../res/assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../res/assets/js/echarts.js"></script>
+<script src="../res/assets/js/barTickAlign.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="css/timeSlider.css"/>
+    <title>scheduler</title>
+    <style>
+        body{
+            background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMqXogyYADMIIkl7QpPMcmP+gkAYLGGdeobP2EAAAAAElFTkSuQmCC);
+            user-select:none;
+        }
+
+        .code{
+            width:500px;
+            border:1px solid black;
+            background:#d4d4d4;
+        }
+    </style>
+</head>
+<body>
+<div class="eventBoxWrap">
+    <label class="label-event">历史记录事件</label>
+    <div class="eventBox"></div>
+    <label class="label-event">历史可编辑事件</label>
+    <div class="eventBox"></div>
+    <label class="label-event">新添事件</label>
+    <div class="eventBox"></div>
+    <!--<label class="label-event">事件4</label>
+    <div class="eventBox"></div>
+    <label class="label-event">事件5</label>
+    <div class="eventBox"></div>-->
+</div>
+
+<div onselectstart="return false;">
+    <label class="label-week">2018-01:</label>
+    <div id="timeslider1" class="timeSlider">
+    </div>
+</div>
+
+<div onselectstart="return false;">
+    <label class="label-week">2018-02:</label>
+    <div id="timeslider2" class="timeSlider">
+    </div>
+</div>
+
+<div onselectstart="return false;">
+    <label class="label-week">2018-03:</label>
+    <div id="timeslider3" class="timeSlider">
+    </div>
+</div>
+<!--
+<div onselectstart="return false;">
+    <label class="label-week">星期四:</label>
+    <div id="timeslider4" class="timeSlider">
+    </div>
+</div>
+
+<div onselectstart="return false;">
+    <label class="label-week">星期五:</label>
+    <div id="timeslider5" class="timeSlider">
+    </div>
+</div>
+
+<div onselectstart="return false;">
+    <label class="label-week">星期六:</label>
+    <div id="timeslider6" class="timeSlider">
+    </div>
+</div>
+
+<div onselectstart="return false;">
+    <label class="label-week">星期日:</label>
+    <div id="timeslider7" class="timeSlider">
+    </div>
+</div>-->
+
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/underscore.js"></script>
+<script type="text/javascript" src="js/timeSlider.js"></script>
+<script>
+  /* 动态创建7个时间轴 */
+  //timeS1  这个命名要以DIV ID编号来  如timeS1  timeS2....点保存时需要用到
+  var dateAxis = ['2018-01', '2018-02', '2018-03'] // 每一个日期轴月份,必须设置
+  var timeS1 = new TimeSlider({
+    id: 'timeslider1',//对应的DIV ID
+    language: 'cn',
+    currentMonth: '2018/01',//当前时间轴月份
+    defaultDate: ['01', '06'],//初始化时间
+    defaultEvents: [1, 1],//对应时间的事件  0为历史事件,1为历史可编辑事件,2是新添加事件
+    banMove: [1, 1]//对应时间是否可编辑0不可编辑,1可编辑 ,2新添加可编辑删除
+  })
+
+  var timeS2 = new TimeSlider({
+    id: 'timeslider2',
+    language: 'cn',
+    currentMonth: '2018/02',//当前时间轴月份
+    defaultDate: ['27'],//初始化时间
+    defaultEvents: [0],//对应时间的事件  0为历史事件,1为历史可编辑事件,2是新添加事件
+    banMove: [0]//对应时间是否可编辑0不可编辑,1可编辑 ,2新添加可编辑删除
+  })
+
+  var timeS3 = new TimeSlider({
+    id: 'timeslider3',
+    language: 'cn',
+    currentMonth: '2018/03'//当前时间轴月份
+  })
+
+  /*
+    var timeS4 = new TimeSlider({
+        id:"timeslider4",
+        language:"cn",
+        defaultTime:["0:00-2:00", "15:30-18:00"],
+        defaultEvents:[0, 0],
+        banMove:[0, 0]
+    });
+
+    var timeS5 = new TimeSlider({
+        id:"timeslider5",
+        language:"cn",
+        defaultTime:["0:00-2:00"],
+        defaultEvents:[0],
+        banMove:[0]
+    });
+
+    var timeS6 = new TimeSlider({
+        id:"timeslider6",
+        language:"cn"
+    });
+
+    var timeS7 = new TimeSlider({
+        id:"timeslider7",
+        language:"cn"
+    });*/
+
+  function saveDate (id) {
+    var $this
+    switch (id) {
+      case '1':
+        $this = timeS1
+        break
+      case '2':
+        $this = timeS2
+        break
+      case '3':
+        $this = timeS3
+        break
+      case '4':
+        $this = timeS4
+        break
+      case '5':
+        $this = timeS5
+        break
+      case '6':
+        $this = timeS6
+        break
+      case '7':
+        $this = timeS7
+        break
+      case '8':
+        $this = timeS7
+        break
+      case '9':
+        $this = timeS9
+        break
+      case '10':
+        $this = timeS10
+        break
+      case '11':
+        $this = timeS11
+        break
+      case '12':
+        $this = timeS12
+        break
+    }
+    var data = {}
+    _.forEach($this.get().times, function (item, index) {
+      var event = $this.get().events[index] + 1
+      var time = '<span>' + item + '</span> <span>事件' + event + '</span></br>'
+      data['事件' + event + '_' + index] = item.replace('00', '01')
+    })
+    //点击保存时输出的事件与时间
+    console.log(data)
+  }
+
+</script>
+</body>
+</html>

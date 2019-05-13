@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../res/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../res/assets/css/pagination.css">
+    <link rel="stylesheet" href="../res/assets/css/lineStack.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="blk20"></div>
+    <div class="wrap">
+        <form name="myform" id="myform" class="form-inline" autocomplete="off">
+            <div class="form-group">
+                <label>缴费人姓名</label>
+                <input type="text" name="username" class="form-control" placeholder="请输入缴费人姓名" style="width: 150px;"/>
+            </div>
+            <div class="form-group">
+                <label>操作员</label>
+                <input type="text" name="jfname" class="form-control" placeholder="请输入操作员" style="width: 120px;"/>
+            </div>
+            <div class="form-group">
+                <label>电表名称</label>
+                <input type="text" name="people" class="form-control" placeholder="请输入电表名称" style="width: 120px;"/>
+
+            </div>
+            <div class="form-group">
+                <label>日期范围：</label>
+                <input type="text" name="startTime" id="startTime" class="form-control" style="width: 120px;"/>
+                至
+                <input type="text" name="endTime" id="endTime" class="form-control" style="width: 120px;"/>
+            </div>
+            <button type="button" class="btn btn-primary search">搜索</button>
+            <button type="button" class="btn btn-primary printBtn ml10">打印</button>
+        </form>
+    </div>
+    <div class="blk20 bdx"></div>
+    <div class="blk20"></div>
+    <div class="wrap" id="printContent">
+        <div class="clearfix text-center">
+            <h4>月度电费补费汇总表</h4>
+            <h6 id="dateTime" style="display: none;"></h6>
+            <div class="clearfix lh34">
+                <span class="pull-left"><span id="requestName"></span>（选择的建筑名、区域、位置）</span>
+                <span class="pull-right">单位：元</span>
+            </div>
+            <div class="bdx"></div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>建筑名</th>
+                    <th>补电功率</th>
+                    <th>补费金额</th>
+                    <th>建筑名</th>
+                    <th>补电功率</th>
+                    <th>补费金额</th>
+                </tr>
+                </thead>
+                <tbody id="dataList"></tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="6">计</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="blk20"></div>
+        <div id="pagination"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+  var ajaxUrl = './data.php?action=3'
+</script>
+<script type="text/javascript" src="../res/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../res/assets/js/jquery.print.js"></script>
+<script type="text/javascript" src="../res/assets/js/pagination.js"></script>
+<script src="../res/assets/js/laydate/laydate.js"></script>
+<script src="../res/assets/js/list4.js"></script>
+</body>
+</html>

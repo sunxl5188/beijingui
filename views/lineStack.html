@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../res/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../res/assets/js/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="../res/assets/css/lineStack.css">
+</head>
+<body>
+<div class="container">
+    <div class="blk20"></div>
+    <div class="wrap">
+        <form name="myform" id="myform" class="form-inline" autocomplete="off">
+            <div class="form-group">
+                <label>设备类型：</label>
+                <select name="sbType" class="form-control">
+                    <option value="">请选择类型</option>
+                    <option value="1">类型1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>设备：</label>
+                <select name="equipment" class="form-control">
+                    <option value="">请选择设备</option>
+                    <option value="1">设备1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>负责人：</label>
+                <input type="text" name="people" class="form-control" value=""/>
+
+            </div>
+            <div class="form-group">
+                <label>日期范围：</label>
+                <input type="text" name="startTime" id="startTime" class="form-control" style="width: 120px;" />
+                至
+                <input type="text" name="endTime" id="endTime" class="form-control" style="width: 120px;" />
+            </div>
+
+            <button type="button" class="btn btn-primary search">搜索</button>
+        </form>
+    </div>
+    <div class="blk20 bdx"></div>
+    <div class="blk20"></div>
+    <div class="wrap">
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div class="counter counterBg1">
+                    <p>25356</p>
+                    <p>计划总数</p>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div class="counter counterBg2">
+                    <p>25356</p>
+                    <p>完成总数</p>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div class="counter counterBg3">
+                    <p>100%</p>
+                    <p>完成率</p>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div class="counter counterBg4">
+                    <p>3</p>
+                    <p>设备总数</p>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div class="counter counterBg5">
+                    <p>4</p>
+                    <p>维修次数</p>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div class="counter counterBg6">
+                    <p>10%</p>
+                    <p>维修率</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blk20"></div>
+    <div class="row" id="containerWrap">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        	<div class="wrap">
+                <div id="echartsId"></div>
+
+                 <div style="padding-left:25px;padding-right:25px;">
+                     <div class="row">
+                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                             <div class="counterA">
+                                 <span>计划总数:25356</span>
+                             </div>
+                         </div>
+                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                             <div class="counterA">
+                                 <span>完成总数:25356</span>
+                             </div>
+                         </div>
+                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                             <div class="counterA">
+                                 <span>完成率:60%</span>
+                             </div>
+                         </div>
+                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                             <div class="counterA">
+                                 <span>维修次数:5</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="blk20"></div>
+                     <div class="table-responsive" style="height: 210px;overflow-y:auto;">
+                         <table class="table table-striped table-bordered table-hover">
+                             <tbody>
+                             <tr>
+                                 <td>1</td>
+                                 <td>1、设备水平校准：2、检查、更换挡砂布</td>
+                             </tr>
+                             <tr>
+                                 <td>2</td>
+                                 <td>1、设备水平校准：2、检查、更换挡砂布</td>
+                             </tr>
+                             <tr>
+                                 <td>3</td>
+                                 <td>1、设备水平校准：2、检查、更换挡砂布</td>
+                             </tr>
+                             <tr>
+                                 <td>4</td>
+                                 <td>1、设备水平校准：2、检查、更换挡砂布</td>
+                             </tr>
+                             <tr>
+                                 <td>5</td>
+                                 <td>1、设备水平校准：2、检查、更换挡砂布</td>
+                             </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+            </div>
+
+            <div class="blk20"></div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="wrap">
+                <div class="table-responsive" style="height:600px;overflow-y:auto;">
+                    <table class="table table-hover table-striped table-condensed echartsList">
+                        <thead>
+                        <tr>
+                            <th width="20%">编码</th>
+                            <th>设备</th>
+                            <th width="20%">保养</th>
+                            <th width="20%">维修</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../res/assets/js/jquery-3.2.1.min.js"></script>
+<script src="../res/assets/js/bootstrap.js"></script>
+<script src="../res/assets/js/laydate/laydate.js"></script>
+<script src="../res/assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../res/assets/js/echarts.js"></script>
+<script src="../res/assets/js/lineStack.js"></script>
+</body>
+</html>

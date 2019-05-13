@@ -1,0 +1,300 @@
+﻿    .timeSlider{
+        padding: 0;
+        margin: 0;
+        border:0;
+        display: block;
+        z-index: 0;
+        margin-left:100px;
+        position:relative;
+        top:-20px;
+	}
+
+	.timeSliderDiv{
+		height:20px;
+		width:14px;
+		z-index:4;
+		top:0;
+        border-left:2px solid #010bff;
+		position:absolute;
+		background:#007acc;
+        box-sizing:border-box;
+	}
+
+	.trCanvas{
+		width: 800px;
+		height: 20px;
+		background: #f2f2ee;
+		position: relative;
+	}
+
+	.fixBGDiv{
+		position:fixed;
+		left:0;
+		right:0;
+		bottom:0;
+		top:0;
+		z-index:999;
+		background-color:#e4e4e4;
+		display:none;
+		filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+		opacity:0.4;
+	}
+
+	.modal{
+		position:fixed;
+		left:0;
+		right:0;
+		bottom:0;
+		top:0;
+		z-index:1000;
+		display:none;
+	}
+
+	.modal-dialog{
+		position:relative;
+		width:400px;
+		margin:150px auto;
+	}
+
+	.modal-content{
+		position:relative;
+		background-color:#f8f5f5;
+		background-clip:padding-box;
+		border:1px solid #d4d4d4;
+		border-radius:6px;
+		outline:none;
+		box-shadow:0 3px 9px rgba(0,0,0,0.5);
+	}
+
+	.modal-header{
+		min-height:16px;
+		padding:15px;
+		border-bottom:1px solid #e5e5e5;
+	}
+
+	.modal-title{
+		margin:0;
+		line-height:1.42px;
+	}
+
+	.modal-body{
+		position:relative;
+		padding:20px;
+	}
+
+
+	.modal-footer{
+		padding :19px 20px 20px;
+		text-align:right;
+		margin-top:5px;
+		border-top:1px solid #e5e5e5;
+	}
+
+    .btn{
+		font-size:14px;
+		line-height:1.427;
+		height:40px;
+		width:80px;
+		text-align:center;
+		border:1px solid #d8d8d8;
+		margin:2px;
+		border-radius:5px;
+	}
+
+    .btn:hover{
+		background-color:#e4e4e4;
+        cursor:pointer;
+	}
+
+	.time-div{
+		margin:10px;
+	}
+
+
+	.time-input{
+		width:120px;
+		margin:5px;
+	}
+
+    .time-lab{
+        display:inline-block;
+        width:80px;
+        *zoom:1;
+        *display:inline;
+    }
+
+    .event-div{
+        margin:10px;
+    }
+
+    .event-select{
+        margin-left:20px;
+    }
+
+
+	.coordinate {
+		width:1px;
+		height:4px;
+		background-color:black;
+		position:absolute;
+		z-index:-1;
+	}
+
+	.coordinateLabDiv{
+		width:20px;
+		margin-left:-3px;
+		top:22px;
+		position:absolute;
+		z-index:-1;
+        font-size:14px;
+	}
+
+
+	.leftBar{
+		position:absolute;
+        left:-20px;
+        border:10px solid transparent;
+        border-right:8px solid #d3d3d3;
+        display:none;
+	}
+
+	.rightBar{
+		position:absolute;
+        right:-18px;
+        border:10px solid transparent;
+        border-left:8px solid #d3d3d3;
+        display:none;
+	}
+
+    .rightBar:hover,.leftBar:hover{
+        cursor:e-resize;
+    }
+
+	.leftShow{
+		background-color:blue;
+		color:white;
+		width:30px;
+		height:18px;
+		position:absolute;
+		left:-25px;
+		top:28px;
+		text-align:center;
+		line-height:18px;
+		font-size:.8em;
+		display:none;
+	}
+
+	.rightShow{
+		background-color:blue;
+		color:white;
+		padding-left:3px;
+		width:30px;
+		height:18px;
+		position:absolute;
+		top:28px;
+        right:-25px;
+		text-align:center;
+		line-height:18px;
+		font-size:.8em;
+		display:none;
+	}
+
+
+
+	.label-event{
+		float:left;
+		margin-left:20px;
+	}
+
+    .label-week{
+		float:left;
+		margin-left:20px;
+        margin-top:-20px;
+	}
+
+
+	.editWrap{
+		position:relative;
+		width:100px;
+		left:910px;
+		bottom:42px;
+	}
+
+	.editContent{
+		width:180px;
+		position:absolute;
+		left:0;
+		top:0;
+		display:none;
+		background-color:#f9f6f6;
+		border:1px solid #e4e4e4;
+		z-index:5;
+	}
+
+	.editHeader{
+		min-height:16px;
+		padding:5px;
+		border-bottom:1px solid #e5e5e5;
+	}
+
+    .editHeaderTitle{
+        font-weight:bold;
+    }
+
+	.editBody{
+		position:relative;
+		padding:10px;
+	}
+
+    .editUnit{
+        display:inline-block;
+        width:100%;
+        *zoom:1;
+        *display:inline;
+    }
+
+	.editFotter{
+		padding :10px;
+		text-align:right;
+		margin-top:5px;
+		border-top:1px solid #e5e5e5;
+	}
+
+	.delImg{
+        margin-left:10px;
+	}
+
+	.saveImg:hover,.editImg:hover,.delImg:hover{
+		cursor:pointer;
+	}
+
+	.editBtn{
+		font-size:14px;
+		width:55px;
+        height: 30px;
+		text-align:center;
+		margin:2px;
+        background-repeat: no-repeat;
+        border:0;
+        padding: 0;
+	}
+
+    .eventBoxWrap{
+        position:relative;
+        width:600px;
+        margin:auto;
+        padding-bottom:40px;
+        overflow:hidden;
+    }
+
+    .eventBox{
+        width:20px;
+        height:20px;
+        float:left;
+        margin:1px;
+    }
+
+    .eventSelect{
+        margin-left:10px;
+        width:80px;
+    }
